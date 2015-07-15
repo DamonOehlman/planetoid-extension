@@ -19,7 +19,10 @@
     "url": "https://github.com/DamonOehlman/planetoid-extension/issues"
   },
   "homepage": "https://github.com/DamonOehlman/planetoid-extension#readme",
-  "dependencies": {},
+  "dependencies": {
+    "fdom": "^1.2.0",
+    "most": "^0.14.0"
+  },
   "devDependencies": {
     "browserify": "^10.2.6",
     "chromex": "^1.1.0",
