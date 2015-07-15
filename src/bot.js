@@ -2,8 +2,7 @@ var most = require('most');
 var qsa = require('fdom/qsa');
 var defaultValues = {
   TargetMines: 500,
-  TargetFactories: 500,
-  TargetDefense: 100
+  TargetFactories: 500
 };
 
 most
@@ -23,9 +22,12 @@ most
   .tap(function(input) {
     // NOTE: the DOM mutates between changes so we nede to find the new input (sigh)
     var realInput = document.getElementById(input.id);
+    var targetValue = targetValues[input.id];
 
-    realInput.value = defaultValues[input.id];
-    realInput.dispatchEvent(new Event('change'));
+    if (targetValue !== undefined) {
+      realInput.value = targetValue;
+      realInput.dispatchEvent(new Event('change'));
+    }
   })
   .observe(function(input) {
     console.log('updated ' + input.id + ' value');
