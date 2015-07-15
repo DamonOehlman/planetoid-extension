@@ -6,10 +6,6 @@ var defaultValues = {
   TargetDefense: 100
 };
 
-function toKeyCode(val) {
-  return val + 48;
-}
-
 most
   .fromEvent('click', document)
   .filter(function(evt) {
@@ -31,4 +27,7 @@ most
 
     changeEvent.initEvent('change');
     input.dispatchEvent(changeEvent);
+  })
+  .observe(function(input) {
+    console.log('updated ' + input.id + ' value');
   });
