@@ -1,0 +1,22 @@
+{
+  "name": "planetoid-extension",
+  "version": "1.0.0",
+  "description": "A chrome extension that makes a few things just that bit simpler on planets.nu",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DamonOehlman/planetoid-extension.git"
+  },
+  "keywords": [
+    "vgaplanets"
+  ],
+  "author": "Damon Oehlman <damon.oehlman@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DamonOehlman/planetoid-extension/issues"
+  },
+  "homepage": "https://github.com/DamonOehlman/planetoid-extension#readme"
+}
