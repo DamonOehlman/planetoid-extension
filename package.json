@@ -18,5 +18,18 @@
   "bugs": {
     "url": "https://github.com/DamonOehlman/planetoid-extension/issues"
   },
-  "homepage": "https://github.com/DamonOehlman/planetoid-extension#readme"
+  "homepage": "https://github.com/DamonOehlman/planetoid-extension#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "browserify": "^10.2.6",
+    "chromex": "^1.1.0",
+    "cog": "^1.0.0",
+    "gulp": "^3.8.10",
+    "gulp-help": "^1.3.1",
+    "gulp-util": "^3.0.2",
+    "gulp-zip": "^3.0.2",
+    "rimraf": "^2.3.2",
+    "through2": "^2.0.0",
+    "vinyl-transform": "^1.0.0"
+  }
 }

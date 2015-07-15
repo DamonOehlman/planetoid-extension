@@ -1,0 +1,25 @@
+{
+  "manifest_version": 2,
+  "name": "planets.nu helper extension",
+  "version": "1.10",
+  "description": "Automate particular repetitive tasks for planets.nu",
+  "icons": {
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "author": "Damon Oehlman",
+  "short_name": "planetoid-bot",
+  "background": {
+    "scripts": ["index.js"],
+    "persistent": false
+  },
+  "permissions": [
+    "https://*.planets.nu/*",
+    "http://*.planets.nu/*"
+  ],
+
+  "content_scripts": [{
+    "matches": ["https://*.planets.nu/*","http://*.planets.nu/*"],
+    "js": [ "scripts/message-bridge.js", "bot.js" ]
+  }]
+}
