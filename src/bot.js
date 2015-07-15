@@ -1,5 +1,14 @@
 var most = require('most');
 var qsa = require('fdom/qsa');
+var defaultValues = {
+  TargetMines: 500,
+  TargetFactories: 500,
+  TargetDefense: 100
+};
+
+function toKeyCode(val) {
+  return val + 48;
+}
 
 most
   .fromEvent('click', document)
@@ -12,6 +21,14 @@ most
   .flatMap(function() {
     return most.from(qsa('#BuildingScreen input[type="text"]'));
   })
-  .observe(function(input) {
-    console.log('found input: ', input);
+  .filter(function(input) {
+    return input.value === '0';
+  })
+  .tap(function(input) {
+    var changeEvent = document.createEvent('HTMLEvents');
+
+    input.value = defaultValues[input.id];
+
+    changeEvent.initEvent('change');
+    input.dispatchEvent(changeEvent);
   });
