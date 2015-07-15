@@ -1,6 +1,6 @@
 var most = require('most');
 var qsa = require('fdom/qsa');
-var defaultValues = {
+var targetValues = {
   TargetMines: 500,
   TargetFactories: 500
 };
