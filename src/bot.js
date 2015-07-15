@@ -21,12 +21,11 @@ most
     return input.value === '0';
   })
   .tap(function(input) {
-    var changeEvent = document.createEvent('HTMLEvents');
+    // NOTE: the DOM mutates between changes so we nede to find the new input (sigh)
+    var realInput = document.getElementById(input.id);
 
-    input.value = defaultValues[input.id];
-
-    changeEvent.initEvent('change');
-    input.dispatchEvent(changeEvent);
+    realInput.value = defaultValues[input.id];
+    realInput.dispatchEvent(new Event('change'));
   })
   .observe(function(input) {
     console.log('updated ' + input.id + ' value');
