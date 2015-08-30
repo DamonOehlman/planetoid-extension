@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/DamonOehlman/planetoid-extension#readme",
   "dependencies": {
+    "chromex": "^1.2.0",
     "fdom": "^1.2.0",
     "jquery": "^2.1.4",
     "most": "^0.14.0",

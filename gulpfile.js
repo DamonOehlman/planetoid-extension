@@ -28,6 +28,7 @@ gulp.task('extension-browserify', 'Browserify the extension files', ['prepare'],
 gulp.task('extension-assets', 'Copy the extension source assets into the dist folder', ['prepare', 'chromex-assets'], function() {
   return gulp.src([
     './src/*.png',
+    './src/*.css',
     './src/*.svg',
     './src/*.json'
   ])

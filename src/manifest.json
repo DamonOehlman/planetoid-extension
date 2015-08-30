@@ -11,15 +11,21 @@
   "short_name": "planetoid-bot",
   "background": {
     "scripts": ["index.js"],
-    "persistent": false
+    "persistent": true
   },
   "permissions": [
+    "activeTab",
     "https://*.planets.nu/*",
-    "http://*.planets.nu/*"
+    "http://*.planets.nu/*",
+    "webRequest"
   ],
 
   "content_scripts": [{
     "matches": ["https://*.planets.nu/*","http://*.planets.nu/*"],
-    "js": [ "scripts/message-bridge.js", "bot.js" ]
-  }]
+    "js": ["scripts/message-bridge.js", "injectbot.js"],
+    "css": ["planetoid.css"]
+  }],
+  "web_accessible_resources": [
+    "bot.js"
+  ]
 }
