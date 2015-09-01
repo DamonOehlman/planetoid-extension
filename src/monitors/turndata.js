@@ -1,16 +1,17 @@
 module.exports = function(client) {
-  function monitorTurnData() {
+  function handleTurnLoaded() {
     var turndata = require('../helpers/turndata');
     console.log('checking for turn data: ', turndata);
 
-    // if (! turndata) {
-    //   return setTimeout(monitorTurnData, 100);
-    // }
+    if (! turndata) {
+      return;
+    }
 
-    console.log(turndata && vgap.planets);
+    require('../modifiers/unowned-planet-notes')(turndata);
+    require('../modifiers/mark-planets')(turndata);
   }
 
   client.on('loadturn', function() {
-    setTimeout(monitorTurnData, 100);
+    setTimeout(handleTurnLoaded, 100);
   });
 }
