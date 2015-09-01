@@ -17,7 +17,7 @@ module.exports = function(turndata) {
   searchers.friendIds = function() {
     return turndata.relations.filter(function(rel) {
       return rel.relationfrom >= 2;
-    }).map(pluck('playerid'));
+    }).map(pluck('playertoid'));
   };
 
   return searchers;
