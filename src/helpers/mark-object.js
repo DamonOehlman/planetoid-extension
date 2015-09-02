@@ -1,10 +1,10 @@
 var curry = require('curry');
 var settings = require('../data/settings');
+var color = require('color');
 
 module.exports = curry(function(target, targetType, status) {
-  var colors = (settings.colors[targetType] || {})[status];
-  if (Array.isArray(colors)) {
-    target.colorfrom = '#' + colors[0];
-    target.colorto = '#' + colors[1];
-  }
+  var statusColor = (settings.colors[targetType] || {})[status];
+
+  target.colorfrom = color(statusColor).darken(0.5).desaturate(0.5).hslString();
+  target.colorto = color(statusColor).hslString();
 });

@@ -1,8 +1,8 @@
 exports.colors = {
   planet: {
-    unowned: [ 'ffffff', '505050' ],
-    friend:  [ '9999ff', '333399' ],
-    hostile: [ 'ffcccc', 'ff0000' ]
+    unowned: '#D6C646',
+    friend:  '#1F63E1',
+    hostile: '#E1262A'
   },
 
   ship: {
