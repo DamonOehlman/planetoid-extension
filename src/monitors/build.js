@@ -1,8 +1,9 @@
 var most = require('most');
 var qsa = require('fdom/qsa');
-var targetValues = {
-  TargetMines: 500,
-  TargetFactories: 500
+var targetValues = require('../data/settings').buildTargets;
+var idToSettingMapping = {
+  TargetMines: 'mines',
+  TargetFactories: 'factories'
 };
 
 most
@@ -22,7 +23,7 @@ most
   .tap(function(input) {
     // NOTE: the DOM mutates between changes so we nede to find the new input (sigh)
     var realInput = document.getElementById(input.id);
-    var targetValue = targetValues[input.id];
+    var targetValue = targetValues[idToSettingMapping[input.id]];
 
     if (targetValue !== undefined) {
       realInput.value = targetValue;
