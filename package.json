@@ -21,7 +21,7 @@
   "homepage": "https://github.com/DamonOehlman/planetoid-extension#readme",
   "dependencies": {
     "chromex": "^1.2.0",
-    "color": "^0.10.1",
+    "color": "^1.0.0",
     "curry": "^1.2.0",
     "fdom": "^1.2.0",
     "jquery": "^2.1.4",
